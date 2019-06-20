@@ -4,6 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <title>Flexbox Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #aaa;
+            font-family: 'open sans', sans-serif;
+            color: white;
+        }
+
+        nav {
+            background-color: #000;
+            align-self: stretch;
+            /* flex-basis: 100px; */
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header {
+            width: 100%;
+            max-width: 1200px;
+            background-color: royalblue;
+            flex-basis: 15vh;
+        }
+
+        section {
+            display: flex;
+            /* flex-direction: row; */
+            flex-grow: 1;
+            background-color: brown;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        main {
+            flex-grow: 1;
+            background-color: grey;
+        }
+
+        aside {
+            flex-basis: 20%;
+            min-width: 180px;
+
+        }
+
+        footer {
+            background-color: black;
+            /* align-self: stretch; */
+            width: 100%;
+            flex-basis: 10vh;
+        }
+
+        @media (max-width: 1024px) {
+            header {
+                order: -1;
+            }
+
+            aside {
+                flex-basis: 100%;
+            }
+
+            section {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
 </head>
 
 <body>
